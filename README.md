@@ -1,18 +1,6 @@
-# Docker
+# Dockumentation LB02
 
-## Kurzer Einstig/Vorwissen
+## Kurzer Einstig ins Thema
 
-Ich habe mit Docker noch nie gearbeitet, habe jedoch schon mal was davon gehört. Ich hoffe, dass ich diese Punkte sauber ausführen kann.
-
-## Bestehende Docker-Container kombinieren
-
-## Bestehende Container als Backend, Desktop-App als Frontend einsetzen
-
-## Volumes zur persistenen Datenablagen eingerichtet
-
-## Volumes zur persistenten Datenablage eingerichtet
-
-## Kennt die Docker spezifischen Befehle
-
-## Eingerichtete Umgebung ist dokumentiert (Umgebungs-Variablen, Netzwerkplan gezeichnet, S)
+Das Thema um was es sich in der LB02 handelt ist Docker und Kubernetes. Bis jez hatte ich noch nie etwas mit Docker wie auch mit Kubernetes zu tun, jedoch hoffe ich, dass ich alle Punkte sauber ausführen kann und diese in meinen weiteren Markdowns festhalten kann.
 
