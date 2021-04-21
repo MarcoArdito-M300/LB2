@@ -61,13 +61,106 @@ package.json
 
 ```
 
-
-
 ## Cloud-Integration
 
+![Docker Cloud](bilder/dockercloud.PNG)
+
+Man kann sogenannte nods erstellen und diese mit dem Docker Cloud Account verknüpfen. Ähnlich wie bei dem Image-Integration.
+
+Das system dahinter ist das gleiche, einfach dass man anstatt Images abrufen kann Nodes abruft mit Containers auf Docker Cloud.
 
 ## Elemente aus Kubernetesübung sind dokumentiert
 
+### Kubernetes deployment erstellen
 
+Ich konnte es leider nicht mehr ausführen, da ich keinen Zugriff auf dem Server hatte. Jedoch sind das die Befehle und Yaml Files, die ich verwendet hatte um alles einzurichten.
+
+Zuerst im Ordner drei verschiedene Files erstellen.
+
+* deployment.yml
+```
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin-deployment
+  labels:
+    app: phpmyadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: phpmyadmin
+  template:
+    metadata:
+      labels:
+        app: phpmyadmin
+    spec:
+      containers:
+        - name: phpmyadmin
+          image: phpmyadmin/phpmyadmin
+          ports:
+            - containerPort: 80
+          env:
+            - name: PMA_HOST
+              value: mysql-service
+            - name: PMA_PORT
+              value: "3306"
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secrets
+                  key: root-password
+
+```
+
+```
+kubectl apply -f deployment.yml
+```
+
+* service.yml
+```
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpmyadmin-service
+spec:
+  type: NodePort
+  selector:
+    app: phpmyadmin
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+```
+
+```
+kubectl apply -f service.yml
+```
+* ingress.yml
+```
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: phpmyadmin-http-ingress
+spec:
+  backend:
+    serviceName: phpmyadmin-service
+    servicePort: 80
+```
+
+```
+kubectl apply -f ingress.yml
+```
+
+Zertifikate + Key müssen gestored werden:
+
+```
+kubectl create secret generic ingress-tls-secret --from-file=tls.crt=server.crt --from-file=tls.key=server.key --from-file=ca.crt=ca.crt
+```
+
+Die Test ergebnisse konnte ich leider nicht Dokumentieren, da ich keinen Zugriff auf den Servre hatte.
 
 
