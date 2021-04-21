@@ -386,6 +386,8 @@ $ docker run -d --restart=on-failure:10 my-flaky-image
 ````
 $ docker run --read-only ubuntu touch x
 ````
+![Readonly](bilder/readonly.PNG)
+
 * Capabilities einschränken
 ````
 $ docker run --cap-drop all --cap-add CHOWN ubuntu chown 100 /tmp
