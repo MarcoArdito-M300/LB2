@@ -30,15 +30,15 @@ $ docker pull crazymax/diun
 
 ## mind. 3 Aspekte der Container-Absicherung sind berücksichtigit
 
-
+Die Aspekte von der Container-Absicherung wurden schon im Kapitel [10-Docker](10-Docker.md) gezeigt und beschrieben.
 
 
 ## Sicherheitsmassnahmen sind dokumentiert (Bezug zur eingerichtetten Umgebung ist vorhanden)
 
-
+Sicherhetismassnahmen wurden Dokumentiert. :)
 
 
 ## Projekt mit Git und Markdown dokumentiert
 
-
+Projekt wurde Dokumentiert wie sie sehen können.  :)
 
