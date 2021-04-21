@@ -3,6 +3,23 @@
 
 ## Image-Bereitstellung
 
+Man muss zuerst ein Container auswählen, welches man pushen möchte.
+Man braucht dazu die ContainerID
+
+```
+$ docker commit(Container ID) (DockerHub Username)/(Gewünschter Name):(Tag)
+```
+Danach muss man das mit dem folgendem Befehl pushen:
+```
+$ docker push (DockerHub Username)/(Gewünschter Name):(Tag)
+```
+Dann sollte es so aussehen auf der Konsole:
+
+![Image Pushen DockerHub](bilder/imagetest.PNG)
+
+und auf DockerHub sollte es so aussehen:
+
+![Image auf DockerHub](bilder/testimage.PNG)
 
 ## Continous Integration
 
