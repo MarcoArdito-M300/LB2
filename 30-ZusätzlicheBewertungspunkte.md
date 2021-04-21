@@ -19,9 +19,9 @@ Mit der IPADRESSE:2020
 ![Ticketsystem Webinterface](bilder/ticketsystem.PNG)
 
 
-## Umsetzung eigener Iddeen: Übungsdokumentation als Vorlage für Modul-Unterlagen erstellt
+## Umsetzung eigener Ideen: Übungsdokumentation als Vorlage für Modul-Unterlagen erstellt
 
-
+Vorherige Aufgabe beachten.
 
 
 ## Persönliche Lernentwicklung: Vergleich Vorwissen - Wissenszuwachs
