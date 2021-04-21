@@ -81,6 +81,8 @@ Dann sollte es so aussehen:
 
 Ein Backend Container könnte einen Mysql Datenbank Server sein und der Frontend unseren Apache Webserver.
 
+Ich habe es jedoch mit dem Webserver gemacht.
+
 ## Mysql
 
 Befehle Mysql:
@@ -119,7 +121,19 @@ RUN docker run --name phpmyadmin -d --link mysql:db -p 5050:80 phpmyadmin/phpmya
 
 ## Volumes zur persistenen Datenablagen eingerichtet
 
+Um ein Volume zu erstellen, muss man die Folgende befehele eingeben:
 
+```
+$ docker run -d --name=nginxtest --mount source=nginx-vol,destination=/usr/share/nginx/html,readonly nginx:latest
+```
+
+Volume anzeigen mit folgendem Befehl: (Testfall)
+
+```
+$ docker volume inspect nginx-vol
+```
+
+![Volume](bilder/volume.PNG)
 
 
 ## Kennt die Docker spezifischen Befehle
@@ -392,6 +406,11 @@ Es wurde getestet und in dem vorherigen Punkt dokumentiert. Ich komme auf den We
 ### Test Mysql Server
 
 Ich konnte mich auf meinem Mysql via phpmyadmin verbinden und anmelden. Wurde ebenfalls in der vorherige Aufgabe dokumentiert. (Mit Screenshots)
+
+
+### Test Volume
+
+Ich konnte ein Volume einrichten und es auch ansehen. (Screenshot vom Testfall unter Aufgabe des Volumes)
 
 ## Projekt mit Git und Markdown dokumentiert
 
