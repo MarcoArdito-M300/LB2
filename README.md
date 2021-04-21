@@ -15,4 +15,6 @@ VIEL SPASS!
 
 [40-Zusätzliche systemtechnische Bewertungspunkte](40-ZusätzlicheSystemtechnischeBewertungspunkte.md)
 
+[50-Kubernetes](50-Kubernetes.md)
+
 ![Docker](bilder/docker.PNG)
